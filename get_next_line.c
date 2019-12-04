@@ -34,7 +34,10 @@ int		get_next_line(int fd, char **line)
 	if (*line == NULL)
 		return (-1);
 	if (pos_n == -1)
+	{
+		free(file);
 		return (0);
+	}
 	pos_n++;
 	return (1);
 }
