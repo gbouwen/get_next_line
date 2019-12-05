@@ -6,7 +6,7 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/25 08:22:58 by gbouwen       #+#    #+#                 */
-/*   Updated: 2019/12/05 08:30:42 by gbouwen       ########   odam.nl         */
+/*   Updated: 2019/12/05 09:29:01 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int		first_read(int fd, char **file, int *start_pos, int *pos_n)
 		else
 			*file = ft_join_free(*file, temp);
 	}
-	if (file == NULL)
+	if (*file == NULL)
 		return (-1);
 	*pos_n = get_pos_n(*file, *start_pos);
 	return (val_read);
@@ -95,10 +95,10 @@ char	*get_correct_line(char *file, int start_pos, int pos_n)
 	if (pos_n == -1)
 	{
 		len_last_line = ft_strlen_v2(file, start_pos);
-		str = malloc(len_last_line);
+		str = malloc(len_last_line + 1);
 	}
 	else
-		str = malloc(pos_n);
+		str = malloc(pos_n - start_pos + 1);
 	if (!str)
 	{
 		free(file);

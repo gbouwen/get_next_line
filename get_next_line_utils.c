@@ -6,7 +6,7 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/12/02 13:11:36 by gbouwen       #+#    #+#                 */
-/*   Updated: 2019/12/05 08:13:04 by gbouwen       ########   odam.nl         */
+/*   Updated: 2019/12/05 09:29:11 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int		ft_strlen_v2(char *str, int start_pos)
 	i = start_pos;
 	while (str[i] != '\0')
 		i++;
-	return (i);
+	return (i - start_pos);
 }
 
 int		get_pos_n(char *file, int start_pos)
