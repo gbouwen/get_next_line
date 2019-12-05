@@ -6,13 +6,11 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/25 08:22:58 by gbouwen       #+#    #+#                 */
-/*   Updated: 2019/12/05 08:28:41 by gbouwen       ########   odam.nl         */
+/*   Updated: 2019/12/05 08:30:42 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-#include <stdio.h>
 
 int		get_next_line(int fd, char **line)
 {
