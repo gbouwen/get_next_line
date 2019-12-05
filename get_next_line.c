@@ -6,11 +6,13 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/25 08:22:58 by gbouwen       #+#    #+#                 */
-/*   Updated: 2019/12/04 09:32:57 by gbouwen       ########   odam.nl         */
+/*   Updated: 2019/12/05 08:19:57 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+#include <stdio.h>
 
 int		get_next_line(int fd, char **line)
 {
@@ -34,7 +36,7 @@ int		get_next_line(int fd, char **line)
 	if (*line == NULL)
 		return (-1);
 	if (pos_n == -1)
-		return (0);
+		return (free_and_zero(file));
 	pos_n++;
 	return (1);
 }
@@ -103,7 +105,13 @@ char	*get_correct_line(char *file, int start_pos, int pos_n)
 	{
 		free(file);
 		return (NULL);
-	}	
+	}
 	str = ft_cpy(str, file, start_pos, pos_n);
 	return (str);
+}
+
+int		free_and_zero(char *file)
+{
+	free(file);
+	return (0);
 }
