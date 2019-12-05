@@ -6,7 +6,7 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/25 08:22:58 by gbouwen       #+#    #+#                 */
-/*   Updated: 2019/12/05 09:29:01 by gbouwen       ########   odam.nl         */
+/*   Updated: 2019/12/05 10:00:36 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,8 @@ char	*get_correct_line(char *file, int start_pos, int pos_n)
 	int		len_last_line;
 	char	*str;
 
+	printf("start_pos: %d\n", start_pos);
+	printf("pos_n: %d\n", pos_n);
 	if (pos_n == -1)
 	{
 		len_last_line = ft_strlen_v2(file, start_pos);
