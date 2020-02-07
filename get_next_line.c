@@ -6,7 +6,7 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/25 08:22:58 by gbouwen       #+#    #+#                 */
-/*   Updated: 2019/12/05 14:15:00 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/02/07 15:59:01 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		get_next_line(int fd, char **line)
 		*line = ft_strdup("");
 		return (0);
 	}
-	if (pos_n == -1 && val_read == BUFFER_SIZE)
+	if (pos_n == -1 && val_read == 1)
 		*line = read_until_newline(fd, &file, start_pos, &pos_n);
 	else
 		*line = get_correct_line(file, start_pos, pos_n);
@@ -41,12 +41,12 @@ int		get_next_line(int fd, char **line)
 
 int		first_read(int fd, char **file, int *start_pos, int *pos_n)
 {
-	char	temp[BUFFER_SIZE + 1];
+	char	temp[1 + 1];
 	int		val_read;
 
 	if (fd == -1)
 		return (-1);
-	val_read = read(fd, temp, BUFFER_SIZE);
+	val_read = read(fd, temp, 1);
 	if (val_read == -1)
 		return (-1);
 	if (val_read == 0 && *pos_n == 0)
@@ -68,14 +68,14 @@ int		first_read(int fd, char **file, int *start_pos, int *pos_n)
 
 char	*read_until_newline(int fd, char **file, int start_pos, int *pos_n)
 {
-	char	temp[BUFFER_SIZE + 1];
+	char	temp[1 + 1];
 	int		val_read;
 	char	*correct_line;
 
-	val_read = BUFFER_SIZE;
-	while (*pos_n == -1 && val_read == BUFFER_SIZE)
+	val_read = 1;
+	while (*pos_n == -1 && val_read == 1)
 	{
-		val_read = read(fd, temp, BUFFER_SIZE);
+		val_read = read(fd, temp, 1);
 		temp[val_read] = '\0';
 		if (val_read > 0)
 			*file = ft_join_free(*file, temp);
@@ -92,8 +92,6 @@ char	*get_correct_line(char *file, int start_pos, int pos_n)
 	int		len_last_line;
 	char	*str;
 
-	printf("start_pos: %d\n", start_pos);
-	printf("pos_n: %d\n", pos_n);
 	if (pos_n == -1)
 	{
 		len_last_line = ft_strlen_v2(file, start_pos);

@@ -6,7 +6,7 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/12/02 13:11:36 by gbouwen       #+#    #+#                 */
-/*   Updated: 2019/12/05 10:00:45 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/02/07 15:59:13 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,6 @@ char	*ft_cpy(char *str, char *file, int start_pos, int pos_n)
 	if (pos_n == -1)
 	{
 		len_last_line = ft_strlen_v2(file, start_pos);
-		printf("len_last_line: %d\n", len_last_line);
 		while (i < len_last_line)
 		{
 			str[i] = file[start_pos + i];

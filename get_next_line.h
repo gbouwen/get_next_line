@@ -6,7 +6,7 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/25 08:24:03 by gbouwen       #+#    #+#                 */
-/*   Updated: 2019/12/05 08:31:34 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/02/07 15:57:23 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 32
-# endif
 
 int		get_next_line(int fd, char **line);
 char	*get_correct_line(char *file, int start_pos, int pos_n);
