@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-char	*ft_strdup(char *s1)
+char	*ft_strdup_gnl(char *s1)
 {
 	int		len;
 	char	*s1_dup;

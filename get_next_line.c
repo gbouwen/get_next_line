@@ -24,7 +24,7 @@ int		get_next_line(int fd, char **line)
 		return (-1);
 	if (val_read == -2)
 	{
-		*line = ft_strdup("");
+		*line = ft_strdup_gnl("");
 		return (0);
 	}
 	if (pos_n == -1 && val_read == 1)
@@ -56,7 +56,7 @@ int		first_read(int fd, char **file, int *start_pos, int *pos_n)
 	if (val_read > 0)
 	{
 		if (!*file)
-			*file = ft_strdup(temp);
+			*file = ft_strdup_gnl(temp);
 		else
 			*file = ft_join_free(*file, temp);
 	}
